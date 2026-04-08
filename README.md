@@ -1,6 +1,6 @@
 # Log Analysis CLI Tool
 
-## Overview
+## Overview
 
 This project provides a command line tool for parsing and analyzing the content of log files. It processes structured log entries and extracts key metrics such as IP frequency, traffic volume, and request distribution over time.
 
@@ -10,6 +10,13 @@ Basic DevSecOps practices are followed through containerization (Docker) and rep
 
 ---
 
+## Assumptions
+
+- Log lines are expected to contain at least 10 fields
+- Malformed lines are skipped during parsing
+- Input files follow a consistent structure
+
+---
 ## Features
 
 - Parse structured log files into Python dictionaries.
@@ -67,7 +74,7 @@ python src/main.py --input <input.log> --output <output.json> [OPTIONS]
 ### Most frequent IP
 `python src/main.py --input access.log --output result.json --mfip`
 
-### Multiple metrics
+### Multiple metrics
 `python src/main.py --input access.log --output results.json --mfip --bytes --eps`
 
 ---
@@ -78,6 +85,12 @@ Results are saved in plain JSON format.
 
 ---
 
+## Notes
+
+- The log file used for testing is not included due to its size
+- The tool is designed to be extensible and fault-tolerant
+
+---
 ## Author
 
 *Matías Gámez Marín*
