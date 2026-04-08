@@ -1,0 +1,14 @@
+[project]
+name = "log-analyzer"
+version = "0.1.0"
+description = "CLI tool for log analysis"
+requires-python = ">=3.11"
+
+[project.scripts]
+log-analyzer = "main:main" 
+
+[tool.setuptool]
+package-dir = {"" = "src"}
+
+[too.setuptool.packages.find]
+where = "src"
